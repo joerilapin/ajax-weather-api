@@ -11,6 +11,9 @@ register
 you' ll get a key to connect with API:
 748e4cc96d5d84c5ff007acaf16fa750, the name I gave the key is BeCode
 
+
+
+
 The weather application
 Practical Information
 
