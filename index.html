@@ -28,7 +28,7 @@
     It contains the row elements and the row elements are the container of columns (known as grid system). The container
     class is used to create boxed content-->
 <div class="container">
-    <div class="row" style="margin-bottom:20px";>
+    <div class="row" style="margin-bottom:20px;">
 
         <!--Center aligned text on all viewport sizes-->
         <!--text-primary This text is important.-->
@@ -37,19 +37,20 @@
     <!--In an INLINE FORM, all of the elements are inline, left-aligned, and the labels are ALONGSIDE. Note: This only
     applies to forms within viewports that are at least 768px wide! ... Add class .form-inline to the <form> element-->.
     <div class="row form-group form-inline" id="rowDiv">
-        <input type="text" name="city" id="city" class="form-control" placeholder="City-Name">
-        <!--/The button classes can be used on an <a>, <button>, or <input> element
+        <input type="text" name="city" id="city" class="form-control" placeholder="City-name">
+        <input type="text" name="country" id="country" class="form-control" placeholder="Country-name">
+        <!--/The button classes can be   used on an <a>, <button>, or <input> element
         Bootstrap provides different styles of buttons:
         .btn    .btn-default    .btn-primary    .btn-success    .btn-info    .btn-warning    .btn-danger    .btn-link
         -->
         <button id="submitWeather" class = "btn btn-primary" >Search City</button>
     </div>
-</div>
 
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+    <script src="fetch%20the%20weather.js"></script>
+</div>
 </body>
 </html>
