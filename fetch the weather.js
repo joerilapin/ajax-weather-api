@@ -35,14 +35,19 @@ document.getElementById("submitWeather").addEventListener('click', function(){
 //het begin stuk tot de city knip uit de http link hierboven
     let start="http://api.openweathermap.org/data/2.5/weather?q=";
     //ik keten alles aan mekaar
-    let URL=start+cityInput+","+countryInput+"&APPID="+key;
+    let URL=start+cityInput+"&units=metric,"+countryInput+"&APPID="+key;
 
 fetch(URL)
     .then((response) => {
         return response.json();
     })
     .then(data => {
-        console.log(data)
+
+        //console.log(data);
+
+        document.getElementById("dataTemp").innerHTML=data.main.temp;
+        document.getElementById("dataTempMax").innerHTML=data.main.temp_max;
+        document.getElementById("dataTempMin").innerHTML=data.main.temp_min;
     })
 });
 })();
