@@ -35,21 +35,44 @@ document.getElementById("submitWeather").addEventListener('click', function(){
 //het begin stuk tot de city knip uit de http link hierboven
     let start="http://api.openweathermap.org/data/2.5/weather?q=";
     //ik keten alles aan mekaar
+    //&units=metric zet de data om naar metrische
     let URL=start+cityInput+","+countryInput+"&APPID="+key+"&units=metric";
 
+    //eerste fetch
 fetch(URL)
     .then((response) => {
         return response.json();
     })
     .then(data => {
-        //hier haalde ik algemeen alle datain, ik comment deze uit om specifiekere data binnen te halen
-        //console.log(data);
+        //hier haalde ik algemeen alle data in, en log in de console ter controle
+        console.log(data);
         //
         //specifieke data binnenhalen, temp, tempmax en tempmin
         //en via de innerHtml overbrengen naar de paragraaf met overeenkomstige id
-        document.getElementById("dataTemp").innerHTML=data.main.temp;
-        document.getElementById("dataTempMax").innerHTML=data.main.temp_max;
-        document.getElementById("dataTempMin").innerHTML=data.main.temp_min;
+
+
+        // ik bouw een loop om de data van de 0de record uit te lezen, de 1e,
+        //let i;
+        //for (i = 0; i < 2; i++) {
+
+        //poging om de temperaturen van  de volgende drie uren out te putten
+        //lukte niet: vanaf dat ik 'list' toevoegde, werkte het niet meer
+        //     alert(data.list[i].main.temp);
+            //         // document.getElementById("dataTemp[i]").innerHTML = data.list[0].main.temp;
+            //         // document.getElementById("dataTempMax[i]").innerHTML = data.list[i].main.temp_max;
+            //         // document.getElementById("dataTempMin[i]").innerHTML = data.list[i].main.temp_min;
+        document.getElementById("dataTemp").innerHTML = data.main.temp;
+        document.getElementById("dataTempMax").innerHTML = data.main.temp_max;
+        document.getElementById("dataTempMin").innerHTML = data.main.temp_min;
+
+
+
+        //Jens hielp me om de data op lijn te krijgen met de output
+       // document.getElementById("dataTempMax0").innerHTML=`de maximumtemperatuur in °C = ${data.main.temp_max}`;
+        //document.getElementById("dataTempMin0").innerHTML=`de minimumtemperatuur in °C = ${data.main.temp_min}`;
+
+
+
     })
 });
 })();
