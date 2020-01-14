@@ -35,16 +35,18 @@ document.getElementById("submitWeather").addEventListener('click', function(){
 //het begin stuk tot de city knip uit de http link hierboven
     let start="http://api.openweathermap.org/data/2.5/weather?q=";
     //ik keten alles aan mekaar
-    let URL=start+cityInput+"&units=metric,"+countryInput+"&APPID="+key;
+    let URL=start+cityInput+","+countryInput+"&APPID="+key+"&units=metric";
 
 fetch(URL)
     .then((response) => {
         return response.json();
     })
     .then(data => {
-
+        //hier haalde ik algemeen alle datain, ik comment deze uit om specifiekere data binnen te halen
         //console.log(data);
-
+        //
+        //specifieke data binnenhalen, temp, tempmax en tempmin
+        //en via de innerHtml overbrengen naar de paragraaf met overeenkomstige id
         document.getElementById("dataTemp").innerHTML=data.main.temp;
         document.getElementById("dataTempMax").innerHTML=data.main.temp_max;
         document.getElementById("dataTempMin").innerHTML=data.main.temp_min;
